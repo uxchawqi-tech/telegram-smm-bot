@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: telegram-smm-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: BOT_TOKEN
+        sync: false
+      - key: SMM_API_URL
+        value: https://bot.tota.click/api/v2
+      - key: SMM_API_KEY
+        sync: false
+      - key: ADMIN_ID
+        sync: false
